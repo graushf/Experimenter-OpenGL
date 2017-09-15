@@ -1,0 +1,57 @@
+﻿Build started 15/09/2017 13:31:23.
+     1>Project "C:\Users\3D-PROGR-PC-CL3VER\Documents\BillboardingProject\BillboardingProject\Experiment_FreeCamera.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(245): warning C4244: 'argument' : conversion from 'GLuint' to 'float', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(260): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(400): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(401): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(405): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(406): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(408): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(409): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\3d-progr-pc-cl3ver\documents\billboardingproject\billboardingproject\main.cpp(416): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\3D-PROGR-PC-CL3VER\Documents\BillboardingProject\BillboardingProject\Debug\Experiment_FreeCamera.exe" /INCREMENTAL /NOLOGO opengl32.lib glew32s.lib glfw3.lib SOIL.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\3D-PROGR-PC-CL3VER\Documents\BillboardingProject\BillboardingProject\Debug\Experiment_FreeCamera.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\3D-PROGR-PC-CL3VER\Documents\BillboardingProject\BillboardingProject\Debug\Experiment_FreeCamera.lib" /MACHINE:X86 Debug\Billboard.obj
+         Debug\Camera.obj
+         Debug\Geodesicsphere.obj
+         Debug\main.obj
+         Debug\Shader.obj
+         Debug\Utilities.obj
+         SOIL.lib(SOIL.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+     1>Billboard.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Generating code
+         Finished generating code
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewBindBuffer imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewBufferData imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewGenBuffers imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewEnableVertexAttribArray imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewGetUniformLocation imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewUniform3f imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewUniformMatrix4fv imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewVertexAttribPointer imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewBindVertexArray imported
+     1>Geodesicsphere.obj : warning LNK4049: locally defined symbol ___glewGenVertexArrays imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewAttachShader imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewCompileShader imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewCreateProgram imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewCreateShader imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewDeleteShader imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewGetProgramInfoLog imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewGetProgramiv imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewGetShaderInfoLog imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewGetShaderiv imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewLinkProgram imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewShaderSource imported
+     1>Shader.obj : warning LNK4049: locally defined symbol ___glewUseProgram imported
+     1>glew32s.lib(glew.obj) : warning LNK4204: 'C:\Users\3D-PROGR-PC-CL3VER\Documents\BillboardingProject\BillboardingProject\Debug\vc120.pdb' is missing debugging information for referencing module; linking object as if no debug info
+         Experiment_FreeCamera.vcxproj -> C:\Users\3D-PROGR-PC-CL3VER\Documents\BillboardingProject\BillboardingProject\Debug\Experiment_FreeCamera.exe
+     1>Done Building Project "C:\Users\3D-PROGR-PC-CL3VER\Documents\BillboardingProject\BillboardingProject\Experiment_FreeCamera.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.18

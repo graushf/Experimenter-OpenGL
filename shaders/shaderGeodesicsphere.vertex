@@ -1,0 +1,41 @@
+#version 330 core
+layout (location = 0) in vec3 position;
+
+out vec3 colorCoord;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+void main()
+{
+	gl_Position = projection * view * model * vec4(position, 1.0);
+
+	vec4 positionWorld = model * vec4(position, 1.0); 
+
+	if (position.z < 1.0) {
+		colorCoord = vec3(1.0/255.0, 0, 21/255);
+	}
+	if (position.z < (1.0 - 0.16))
+	{
+		colorCoord = vec3(3.0/255.0, 0, 62/255);
+	}
+	if (position.z < (1.0 - 2*0.16))
+	{
+		colorCoord = vec3(5.0/255.0, 0, 99/255);
+	}
+	if (position.z < (1.0 - 3*0.16))
+	{
+		colorCoord = vec3(6.0/255.0, 0, 133/255);
+	}
+	if (position.z < (1.0 - 4*0.16))
+	{
+		colorCoord = vec3(8.0/255.0, 0, 172/255);
+	}
+	if (position.z < (1.0 - 5*0.16))
+	{
+		colorCoord = vec3(9.0/255.0, 0, 200/255);
+	}
+
+	colorCoord = vec3(positionWorld.x, positionWorld.y, positionWorld.z);
+}

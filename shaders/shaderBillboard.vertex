@@ -1,0 +1,87 @@
+#version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec2 texCoord;
+
+out vec2 TexCoord;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+uniform vec3 point_pos;
+uniform vec3 camera_pos;
+uniform vec3 camera_up;
+
+uniform vec3 _direction;
+uniform vec3 _up;
+uniform vec3 _right;
+
+uniform mat4 _scale;
+
+void main()
+{
+	TexCoord = texCoord;
+
+	vec3 look = camera_pos - point_pos;
+	look = normalize(look);
+	//vec3 temp_up = vec3(view[0][0], view[0][1], view[0][2]);
+	vec3 temp_up = normalize(camera_up);
+	vec3 right = cross(temp_up, look);
+	right = normalize(right);
+	vec3 up = cross(look, right);
+	up = normalize(up);
+
+	mat4 rotBillboard; 
+	rotBillboard[0][0] = right.x;
+	rotBillboard[1][0] = up.x;
+	rotBillboard[2][0] = look.x;
+	rotBillboard[3][0] = point_pos.x;
+	rotBillboard[0][1] = right.y;
+	rotBillboard[1][1] = up.y;
+	rotBillboard[2][1] = look.y;
+	rotBillboard[3][1] = point_pos.y;
+	rotBillboard[0][2] = right.z;
+	rotBillboard[1][2] = up.z;
+	rotBillboard[2][2] = look.z;
+	rotBillboard[3][2] = point_pos.z;
+	rotBillboard[0][3] = 0.0;
+	rotBillboard[1][3] = 0.0;
+	rotBillboard[2][3] = 0.0;
+	rotBillboard[3][3] = 1.0;
+
+
+	mat4 billboardRotationMatrix;
+	billboardRotationMatrix[0][0] = _right.x;
+	billboardRotationMatrix[0][1] = _right.y;
+	billboardRotationMatrix[0][2] = _right.z;
+	billboardRotationMatrix[0][3] = 0.0;
+	billboardRotationMatrix[1][0] = _up.x;
+	billboardRotationMatrix[1][1] = _up.y;
+	billboardRotationMatrix[1][2] = _up.x;
+	billboardRotationMatrix[1][3] = 0.0;
+	billboardRotationMatrix[2][0] = _direction.x;
+	billboardRotationMatrix[2][1] = _direction.y;
+	billboardRotationMatrix[2][2] = _direction.z;
+	billboardRotationMatrix[2][3] = 0.0;
+	billboardRotationMatrix[3][0] = 0.0;
+	billboardRotationMatrix[3][1] = 0.0;
+	billboardRotationMatrix[3][2] = 0.0;
+	billboardRotationMatrix[3][3] = 1.0;
+
+
+
+	vec3 CameraRight_worldspace = vec3(view[0][0], view[1][0], view[2][0]);
+	vec3 CameraUp_worldspace = vec3(view[0][1], view[1][1], view[2][1]);
+
+	vec2 BillboardSize = vec2(5.0, 5.0);
+
+	vec3 vertexPosition_worldspace = point_pos + CameraRight_worldspace * position.x * BillboardSize.x + CameraUp_worldspace * position.y * BillboardSize.y;
+
+	gl_Position = projection * view * vec4(vertexPosition_worldspace, 1.0);
+
+
+	
+	//gl_Position = projection * view * model * rotBillboard * vec4(position, 1.0);
+
+	//gl_Position = projection * view * model * billboardRotationMatrix * _scale * vec4(position, 1.0);
+}
